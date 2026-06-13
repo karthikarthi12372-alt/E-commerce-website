@@ -63,7 +63,7 @@ function ProductDetails({ match }) {
                 <ListGroup.Item>
                   <Row>
                     <Col>
-                    <Button className="btn-block" disabled={product.countInStock==0} type='button'>Add To Cart</Button>
+                    <Button className="btn-block" disabled={product.countInStock===0} type='button'>Add To Cart</Button>
                     </Col>
                   
                   </Row>
