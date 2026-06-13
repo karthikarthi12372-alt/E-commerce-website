@@ -25,7 +25,7 @@ function App() {
               <Route path="/signup" element={<Signupscreen/>} />
             </Routes>
             <Routes>
-              <Route path="login" element={<Loginscreen />} />
+              <Route path="/login" element={<Loginscreen />} />
             </Routes>
           </Container>
         </main>
