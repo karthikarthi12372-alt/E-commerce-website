@@ -5,7 +5,11 @@ import { Row, Col, Image, ListGroup, Button, Card } from "react-bootstrap";
 
 function ProductDetails({ match }) {
   const { id } = useParams();
-  const product = products.find((p) => p._id === id);
+const product = products.find((p) => p._id === id);
+
+if (!product) {
+  return <h2>Product Not Found</h2>;
+}
   return (
     <>
       <div>
@@ -13,11 +17,11 @@ function ProductDetails({ match }) {
           Go Back
         </Link>
         <Row>
-          <Col md2={6}>
+          <Col md={6}>
             <Image src={product.image} alt={product.name} fluid></Image>
           </Col>
           <Col>
-            <ListGroup varient="flush">
+            <ListGroup variant="flush">
               <ListGroup.Item>
                 <h3>{product.name}</h3>
               </ListGroup.Item>
@@ -63,7 +67,7 @@ function ProductDetails({ match }) {
                 <ListGroup.Item>
                   <Row>
                     <Col>
-                    <Button className="btn-block" disabled={product.countInStock===0} type='button'>Add To Cart</Button>
+                    <Button className="btn-block" disabled={product.countInStock === 0} type='button'>Add To Cart</Button>
                     </Col>
                   
                   </Row>
